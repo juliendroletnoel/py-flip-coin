@@ -18,9 +18,9 @@ def flip_coin() -> dict:
     }
 
     nb_tests = 20000
-    for i in range(nb_tests + 1):
-        d = datetime.now()
-        random.seed(datetime.timestamp(d))
+    for _ in range(nb_tests + 1):
+        current_time = datetime.now()
+        random.seed(datetime.timestamp(current_time))
 
         head = 0
         for flip in range(0, 11):
@@ -29,7 +29,7 @@ def flip_coin() -> dict:
 
         results[head] += 1 / nb_tests
 
-    for e in results:
-        results[e] = round(100 * results[e], 2)
+    for key in results:
+        results[key] = round(100 * results[key], 2)
 
     return results
