@@ -23,7 +23,7 @@ def flip_coin() -> dict:
         random.seed(datetime.timestamp(current_time))
 
         head = 0
-        for flip in range(0, 11):
+        for flip in range(0, 10):
             if random.randint(1, 2) == 1:
                 head += 1
 
